@@ -1,0 +1,38 @@
+@mixin media($size) {
+  @media (max-width: #{$size}px) {
+    @content;
+  }
+}
+
+.licenz-modal {
+  inset: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+
+  &__content {
+    background: white;
+    display: flex;
+    flex-direction: column; 
+    border-radius: 10px;
+    img {
+      width: 500px;
+      @include media(650) {
+        max-width: 350px;
+      }
+      @include media(450) {
+        max-width: 300px;
+      }
+    }
+    button {
+        color: rgb(72, 72, 72);
+        font-size: 50px;
+        text-align: right;
+        padding-right: 10px;
+        cursor: zoom-out;
+    } 
+  }
+}

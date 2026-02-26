@@ -1,0 +1,219 @@
+@mixin media($size) {
+  @media (max-width: #{$size}px) {
+    @content;
+  }
+}
+
+/* ==========================================
+   PREMIUM ADVANTAGES PAGE
+   ========================================== */
+
+.adv-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  margin: var(--space-20) 0;
+
+  @include media(1024) {
+    gap: var(--space-16);
+    margin: var(--space-16) 0;
+  }
+
+  @include media(768) {
+    gap: var(--space-12);
+    margin: var(--space-12) 0;
+  }
+
+  /* Section 1: Reasons */
+  &__section1 {
+    margin: var(--space-12) 0;
+
+    .container {
+      display: flex;
+      gap: var(--space-8);
+
+      @include media(768) {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-6);
+      }
+    }
+
+    &-title {
+      background: var(--accent-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-10) var(--space-20) var(--space-10) var(--space-16);
+      border-radius: var(--radius-lg);
+
+      @include media(750) {
+        padding: var(--space-8) var(--space-16) var(--space-8) var(--space-12);
+      }
+
+      @include media(600) {
+        padding: var(--space-6) var(--space-12) var(--space-6) var(--space-10);
+      }
+
+      h2 {
+        font-size: var(--text-3xl);
+        font-weight: var(--font-bold);
+        text-transform: uppercase;
+        max-width: 200px;
+        color: white;
+
+        @include media(750) {
+          font-size: var(--text-2xl);
+        }
+
+        @include media(600) {
+          font-size: var(--text-xl);
+        }
+      }
+    }
+
+    &-reason {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      padding: var(--space-4) 0;
+
+      @include media(600) {
+        gap: var(--space-2);
+      }
+
+      span {
+        font-size: var(--text-2xl);
+        font-weight: var(--font-bold);
+        color: white;
+        background: var(--accent-dark);
+        padding: var(--space-8) var(--space-10);
+        border-radius: 50%;
+        border: solid 4px white;
+        box-shadow: var(--shadow-refined);
+
+        @include media(750) {
+          font-size: var(--text-xl);
+          padding: var(--space-6) var(--space-8);
+        }
+
+        @include media(600) {
+          font-size: var(--text-lg);
+          padding: var(--space-4) var(--space-6);
+        }
+      }
+
+      p {
+        font-size: var(--text-lg);
+        font-weight: var(--font-medium);
+        line-height: var(--leading-relaxed);
+
+        @include media(750) {
+          font-size: var(--text-base);
+        }
+
+        @include media(600) {
+          font-size: var(--text-sm);
+        }
+
+        @include media(450) {
+          font-size: var(--text-xs);
+        }
+      }
+    }
+
+    &-reasons {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+  }
+
+  /* Section 2: Features Grid */
+  &__section2 {
+    &-title {
+      font-weight: var(--font-bold);
+      font-size: var(--text-3xl);
+      text-transform: uppercase;
+      color: var(--neutral-900);
+      text-align: center;
+      padding: var(--space-20) 0;
+
+      @include media(768) {
+        font-size: var(--text-2xl);
+        padding: var(--space-16) 0;
+      }
+    }
+
+    &-card {
+      display: flex;
+      max-width: 530px;
+      width: 100%;
+      align-items: start;
+      gap: var(--space-8);
+      background: white;
+      padding: var(--space-8);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--neutral-200);
+      box-shadow: var(--shadow-soft);
+      transition: all var(--transition-smooth);
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-elevated);
+        border-color: var(--neutral-300);
+      }
+
+      @include media(768) {
+        gap: var(--space-6);
+        padding: var(--space-6);
+      }
+
+      img {
+        width: 60px;
+        height: 60px;
+        flex-shrink: 0;
+
+        @include media(768) {
+          width: 48px;
+          height: 48px;
+        }
+      }
+
+      h4 {
+        font-weight: var(--font-bold);
+        font-size: var(--text-base);
+        line-height: 1.75;
+        text-transform: uppercase;
+        color: var(--neutral-900);
+        padding-bottom: var(--space-4);
+
+        @include media(768) {
+          font-size: var(--text-sm);
+        }
+      }
+
+      p {
+        font-weight: var(--font-normal);
+        font-size: var(--text-base);
+        line-height: var(--leading-relaxed);
+        color: var(--neutral-600);
+
+        @include media(768) {
+          font-size: var(--text-sm);
+        }
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-12);
+      justify-content: center;
+
+      @include media(768) {
+        gap: var(--space-8);
+      }
+    }
+  }
+}

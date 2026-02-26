@@ -1,0 +1,33 @@
+$Ubuntu:     
+             (700, 'Bold'),
+             (500, 'Medium'),
+             (400, 'Regular'),
+             (300, 'Light');
+            
+
+@each $weight, $name in $Ubuntu{
+    @font-face {
+        font-family: 'Ubuntu';
+        src: url(../fonts/Ubuntu-#{$name}.ttf);
+        font-weight: $weight;
+    }
+}  
+
+
+$Roboto:   (400, 'Regular');       
+@each $weight, $name in $Roboto{
+    @font-face {
+        font-family: 'Roboto';
+        src: url(../fonts/Roboto_Condensed-Regular.ttf);
+        font-weight: $weight;
+    }
+}   
+
+$Inter:   (400, 'Regular');       
+@each $weight, $name in $Inter{
+    @font-face {
+        font-family: 'Inter';
+        src: url(../fonts/Inter_24pt-Regular.ttf);
+        font-weight: $weight;
+    }
+}   

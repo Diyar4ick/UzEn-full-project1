@@ -1,0 +1,281 @@
+/* ==========================================
+   PREMIUM ANIMATIONS
+   Subtle, Refined Micro-Interactions
+   ========================================== */
+
+/* ==========================================
+   KEYFRAME ANIMATIONS
+   ========================================== */
+
+/* Fade Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Subtle Scale */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Gentle Slide */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Subtle Pulse (for CTAs) */
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.9;
+    }
+}
+
+/* ==========================================
+   ANIMATION UTILITY CLASSES
+   ========================================== */
+
+.animate-fadeIn {
+    animation: fadeIn 600ms var(--ease-out) forwards;
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 600ms var(--ease-out) forwards;
+}
+
+.animate-fadeInDown {
+    animation: fadeInDown 600ms var(--ease-out) forwards;
+}
+
+.animate-scaleIn {
+    animation: scaleIn 500ms var(--ease-out) forwards;
+}
+
+.animate-slideInLeft {
+    animation: slideInLeft 600ms var(--ease-out) forwards;
+}
+
+.animate-slideInRight {
+    animation: slideInRight 600ms var(--ease-out) forwards;
+}
+
+/* Animation Delays */
+.delay-100 {
+    animation-delay: 100ms;
+}
+
+.delay-200 {
+    animation-delay: 200ms;
+}
+
+.delay-300 {
+    animation-delay: 300ms;
+}
+
+.delay-400 {
+    animation-delay: 400ms;
+}
+
+.delay-500 {
+    animation-delay: 500ms;
+}
+
+/* ==========================================
+   PREMIUM HOVER EFFECTS
+   Subtle, Refined
+   ========================================== */
+
+/* Refined Lift (Cards) */
+.hover-lift {
+    transition: all var(--transition-smooth);
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-refined);
+}
+
+/* Button Hover (Subtle) */
+.hover-button {
+    transition: all var(--transition-base);
+}
+
+.hover-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Link Underline Animation */
+.link-underline {
+    position: relative;
+    transition: color var(--transition-base);
+}
+
+.link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width var(--transition-base);
+}
+
+.link-underline:hover::after {
+    width: 100%;
+}
+
+/* Image Subtle Zoom */
+.hover-zoom {
+    overflow: hidden;
+}
+
+.hover-zoom img {
+    transition: transform var(--transition-slow);
+}
+
+.hover-zoom:hover img {
+    transform: scale(1.05);
+}
+
+/* ==========================================
+   CARD ANIMATIONS
+   ========================================== */
+
+.card-premium {
+    transition: all var(--transition-smooth);
+}
+
+.card-premium:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-elevated);
+}
+
+/* ==========================================
+   SMOOTH SCROLL
+   ========================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ==========================================
+   REDUCED MOTION
+   Accessibility
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ==========================================
+   LOADING STATES
+   Minimal Skeleton
+   ========================================== */
+
+.skeleton {
+    background: linear-gradient(90deg,
+            var(--neutral-200) 0%,
+            var(--neutral-100) 50%,
+            var(--neutral-200) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+    border-radius: var(--radius-base);
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Minimal Spinner */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--neutral-200);
+    border-top-color: var(--accent-base);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

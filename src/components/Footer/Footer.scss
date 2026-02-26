@@ -1,0 +1,389 @@
+@mixin media($size) {
+  @media (max-width: #{$size}px) {
+    @content;
+  }
+}
+
+/* ==========================================
+   REFINED FOOTER
+   Elegant, Structured, Visual
+   ========================================== */
+
+.footer {
+  background: var(--neutral-950);
+  color: var(--neutral-300);
+  padding: var(--space-20) 0 0;
+  position: relative;
+
+  /* Elegant top border */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+        transparent,
+        var(--accent-base) 20%,
+        var(--accent-base) 80%,
+        transparent);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* Footer Top - Main Content: контакты и карта в 2 колонках, сертификаты — отдельная строка */
+  &__top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-areas:
+      "contacts map"
+      "serts serts";
+    gap: var(--space-12) var(--space-16);
+    padding-bottom: var(--space-16);
+    border-bottom: 1px solid var(--neutral-800);
+
+    @include media(1024) {
+      gap: var(--space-10) var(--space-10);
+    }
+
+    @include media(768) {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "contacts"
+        "map"
+        "serts";
+      gap: var(--space-8);
+    }
+  }
+
+  &__contacts {
+    grid-area: contacts;
+  }
+
+  &__map {
+    grid-area: map;
+  }
+
+  &__sert {
+    grid-area: serts;
+  }
+
+  /* Common heading style */
+  .footer-h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: white;
+    margin-bottom: var(--space-6);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: var(--space-3);
+
+    @include media(768) {
+      font-size: var(--text-base);
+      margin-bottom: var(--space-4);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--accent-dark);
+    }
+  }
+
+  /* Contacts Section */
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+
+    &-logo {
+      display: block;
+      height: 50px;
+      width: auto;
+      max-width: 140px;
+      margin: var(--space-6) 0 var(--space-4);
+      object-fit: contain;
+      object-position: left center;
+
+      @include media(768) {
+        height: 44px;
+        max-width: 120px;
+      }
+    }
+  }
+
+  &__email,
+  &__phone {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+
+    img {
+      width: 20px;
+      height: 20px;
+      filter: brightness(0) invert(1);
+      opacity: 0.5;
+
+      @include media(768) {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    a,
+    p {
+      font-size: var(--text-sm);
+      color: var(--neutral-400);
+      transition: color var(--transition-base);
+
+      @include media(768) {
+        font-size: var(--text-xs);
+      }
+    }
+
+    a:hover {
+      color: white;
+    }
+  }
+
+  &__phone {
+    &-numbers {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+  }
+
+  &__address {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+
+    &::before {
+      content: '📍';
+      font-size: 16px;
+      margin-top: 2px;
+    }
+
+    p {
+      font-size: var(--text-sm);
+      color: var(--neutral-400);
+      line-height: var(--leading-relaxed);
+
+      @include media(768) {
+        font-size: var(--text-xs);
+      }
+    }
+  }
+
+  /* Social Media */
+  &__media {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+
+    h4 {
+      font-size: var(--text-sm);
+      font-weight: var(--font-medium);
+      color: var(--neutral-400);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+
+      @include media(768) {
+        font-size: var(--text-xs);
+      }
+    }
+
+    &-images {
+      display: flex;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+
+      a {
+        width: 36px;
+        height: 36px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--neutral-800);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all var(--transition-base);
+
+        @include media(768) {
+          width: 32px;
+          height: 32px;
+        }
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.1);
+          border-color: var(--accent-base);
+          transform: translateY(-3px);
+        }
+
+        img {
+          width: 16px;
+          height: 16px;
+          filter: brightness(0) invert(1);
+          opacity: 0.6;
+
+          @include media(768) {
+            width: 14px;
+            height: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  /* Site Map */
+  &__map {
+    display: flex;
+    flex-direction: column;
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+
+      li {
+        list-style: none;
+      }
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-sm);
+      color: var(--neutral-400);
+      padding: var(--space-2) 0;
+      transition: all var(--transition-base);
+      position: relative;
+
+      @include media(768) {
+        font-size: var(--text-xs);
+      }
+
+      svg {
+        flex-shrink: 0;
+        width: 8px;
+        height: 8px;
+        transition: transform var(--transition-base);
+
+        path {
+          fill: var(--accent-dark);
+        }
+      }
+
+      &:hover {
+        color: white;
+        padding-left: var(--space-2);
+
+        svg {
+          transform: translateX(4px);
+        }
+      }
+    }
+  }
+
+  /* Certificates/Partners — компактные логотипы, плотное расположение */
+  &__sert {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: var(--space-4);
+    width: max-content;
+    max-width: 100%;
+
+    @include media(768) {
+      gap: 4px;
+      justify-content: center;
+      width: 100%;
+    }
+
+    a {
+      display: inline-block;
+      flex-shrink: 0;
+      transition: all var(--transition-base);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 3px;
+
+      &:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      img {
+        display: block;
+        max-height: 26px;
+        max-width: 72px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+        vertical-align: middle;
+        filter: grayscale(0.5) brightness(0.9);
+        transition: filter var(--transition-base);
+
+        @include media(768) {
+          max-height: 22px;
+          max-width: 62px;
+        }
+      }
+
+      &:hover img {
+        filter: grayscale(0) brightness(1);
+      }
+    }
+  }
+
+  /* Footer Bottom */
+  &__bottom {
+    background: rgba(0, 0, 0, 0.3);
+    padding: var(--space-6) 0;
+    margin-top: var(--space-12);
+
+    @include media(768) {
+      padding: var(--space-4) 0;
+      margin-top: var(--space-8);
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    p {
+      font-size: var(--text-xs);
+      color: var(--neutral-500);
+      line-height: var(--leading-relaxed);
+      margin: 0;
+
+      @include media(768) {
+        font-size: 11px;
+      }
+
+      span {
+        font-weight: var(--font-semibold);
+        color: var(--neutral-400);
+      }
+    }
+  }
+}
