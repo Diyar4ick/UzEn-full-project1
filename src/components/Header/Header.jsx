@@ -242,7 +242,7 @@ const Header = () => {
                   {textInfo?.blocks?.[1]?.exp} ▾
                 </summary>
                 <ul className="header__nav-dropdown">
-                  <p className="dropdown-label"> - Раскрытие информации</p>
+                  <p className="dropdown-label"> - {textInfo?.blocks?.[1]?.info_open}</p>
                   <li><NavLink to="/exp">{textInfo?.blocks?.[1]?.exp}</NavLink></li>
                   <li><NavLink to="/corp-manage">{textInfo?.blocks?.[1]?.corp_manage}</NavLink></li>
                   <li><NavLink to="/significant-facts">{textInfo?.blocks?.[1]?.facts}</NavLink></li>
