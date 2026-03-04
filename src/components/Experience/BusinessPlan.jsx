@@ -4,21 +4,21 @@ import Detail2 from "../Details/Detail2";
 
 const BusinessPlan = () => {
   const planLinks = [
-      'src/assets/pdfs/BusinessPlansPdfs/bp2025_rus.pdf',
-      'src/assets/pdfs/BusinessPlansPdfs/bp2024_rus.pdf',
-      'src/assets/pdfs/BusinessPlansPdfs/bp2023_rus.pdf',
-      'src/assets/pdfs/BusinessPlansPdfs/izm_BP_2022_rus.pdf',
-      'src/assets/pdfs/BusinessPlansPdfs/bp2022_rus.pdf',
-      'src/assets/pdfs/BusinessPlansPdfs/izm_BP_2021_rus.pdf',
-      'src/assets/pdfs/BusinessPlansPdfs/bp2021_rus.pdf',
-      'src/assets/pdfs/BusinessPlansPdfs/bp2020_rus.pdf',
-      'src/assets/pdfs/BusinessPlansPdfs/bp2019_rus.pdf',
+      'public/pdfs/BusinessPlansPdfs/bp2025_rus.pdf',
+      'public/pdfs/BusinessPlansPdfs/bp2024_rus.pdf',
+      'public/pdfs/BusinessPlansPdfs/bp2023_rus.pdf',
+      'public/pdfs/BusinessPlansPdfs/izm_BP_2022_rus.pdf',
+      'public/pdfs/BusinessPlansPdfs/bp2022_rus.pdf',
+      'public/pdfs/BusinessPlansPdfs/izm_BP_2021_rus.pdf',
+      'public/pdfs/BusinessPlansPdfs/bp2021_rus.pdf',
+      'public/pdfs/BusinessPlansPdfs/bp2020_rus.pdf',
+      'public/pdfs/BusinessPlansPdfs/bp2019_rus.pdf',
       '',
-      'src/assets/pdfs/BusinessPlansPdfs/bp2017_rus.rar',
-      'src/assets/pdfs/BusinessPlansPdfs/bp2016_rus.pdf',
-      'src/assets/pdfs/BusinessPlansPdfs/izm_BP_2015_rus.pdf',
-      'src/assets/pdfs/BusinessPlansPdfs/bp2015_rus.pdf',
-      'src/assets/pdfs/BusinessPlansPdfs/bp2014_rus.pdf',
+      'public/pdfs/BusinessPlansPdfs/bp2017_rus.rar',
+      'public/pdfs/BusinessPlansPdfs/bp2016_rus.pdf',
+      'public/pdfs/BusinessPlansPdfs/izm_BP_2015_rus.pdf',
+      'public/pdfs/BusinessPlansPdfs/bp2015_rus.pdf',
+      'public/pdfs/BusinessPlansPdfs/bp2014_rus.pdf',
     ]
 
   const { data, status } = useSelector((state) => state.text); 
@@ -38,7 +38,7 @@ const BusinessPlan = () => {
              {textInfo?.blocks?.[0]?.table_description?.map((plan, idx) => (
               <tr key={idx}>
                 <td><p>{plan?.children?.[0]?.text}</p></td>
-                <td><a href={`${planLinks[idx]}`} download>{textInfo?.blocks[0]?.table_link}</a></td>
+                <td><a href={`${planLinks[idx]}`} target="_blank">{textInfo?.blocks[0]?.table_link}</a></td>
               </tr>
              ))}
             </tbody>

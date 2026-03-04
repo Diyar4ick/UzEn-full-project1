@@ -57,7 +57,7 @@ const Tenders = () => {
                 {textInfo?.blocks?.[0]?.card3?.[0]?.button}
               </Link>
               <a
-                href="src/assets/tenderDocuments/оценка.zip"
+                href="public/tenderDocuments/оценка.zip"
                 download="оценка.zip"
                 className="tenders-page__card-link"
               >
@@ -96,7 +96,7 @@ const Tenders = () => {
                 {textInfo?.blocks?.[0]?.card5?.[0]?.button}
               </Link>
               <a
-                href="src/assets/tenderDocuments/msfo.zip"
+                href="public/tenderDocuments/msfo.zip"
                 download="msfo.zip"
                 className="tenders-page__card-link"
               >
@@ -132,7 +132,7 @@ const Tenders = () => {
             <p>{textInfo?.blocks?.[0]?.card7?.[0]?.text}</p>
             <div className="tenders-page__card-links">
                <a
-                href="src/assets/tenderDocuments/gnss.zip"
+                href="public/tenderDocuments/gnss.zip"
                 download="gnss.zip"
                 className="tenders-page__card-link"
               >
@@ -150,7 +150,7 @@ const Tenders = () => {
             <p>{textInfo?.blocks?.[0]?.card8?.[0]?.text}</p>
             <div className="tenders-page__card-links">
                <a
-                href="src/assets/tenderDocuments/digsilent.zip"
+                href="public/tenderDocuments/digsilent.zip"
                 download="digsilent.zip"
                 className="tenders-page__card-link"
               >
@@ -168,7 +168,7 @@ const Tenders = () => {
             <p>{textInfo?.blocks?.[0]?.card9?.[0]?.text}</p>
             <div className="tenders-page__card-links">
                <a
-                href="src/assets/tenderDocuments/samfksfasad.zip"
+                href="public/tenderDocuments/samfksfasad.zip"
                 download="samfksfasad.zip"
                 className="tenders-page__card-link"
               >

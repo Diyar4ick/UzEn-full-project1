@@ -8,23 +8,23 @@ const SignFact2020 = () => {
   const textInfo = Array.isArray(data) ? data[0] : data;
 
   const factPdfLinks = [
-  "src/assets/pdfs/SignFactsPdf2020/SignFacts2020-6.pdf",
-  "src/assets/pdfs/SignFactsPdf2020/SignFacts2020-8.pdf",
-  "src/assets/pdfs/SignFactsPdf2020/SignFacts2020-21-1.pdf",
-  "src/assets/pdfs/SignFactsPdf2020/SignFacts2020-21-2.pdf",
-  "src/assets/pdfs/SignFactsPdf2020/SignFacts2020-21-3.pdf",
-  "src/assets/pdfs/SignFactsPdf2020/SignFacts2020-21-4.pdf",
-  "src/assets/pdfs/SignFactsPdf2020/SignFacts2020-21-5.pdf",
-  "src/assets/pdfs/SignFactsPdf2020/SignFacts2020-21-6.pdf",
-  "src/assets/pdfs/SignFactsPdf2020/SignFacts2020-21-7-8.pdf",
-  "src/assets/pdfs/SignFactsPdf2020/SignFacts2020-21-9.pdf",
-  "src/assets/pdfs/SignFactsPdf2020/SignFacts2020-21-10.pdf",
-  "src/assets/pdfs/SignFactsPdf2020/SignFacts2020-21-17.pdf",
-  "src/assets/pdfs/SignFactsPdf2020/SignFacts2020-21-18.pdf",
-  "src/assets/pdfs/SignFactsPdf2020/SignFacts2020-21-19.pdf",
-  "src/assets/pdfs/SignFactsPdf2020/SignFacts2020-21-20.pdf",
-  "src/assets/pdfs/SignFactsPdf2020/SignFacts2020-32.pdf",
-  "src/assets/pdfs/SignFactsPdf2020/SignFacts2020-36.pdf"
+  "public/pdfs/SignFactsPdf2020/SignFacts2020-6.pdf",
+  "public/pdfs/SignFactsPdf2020/SignFacts2020-8.pdf",
+  "public/pdfs/SignFactsPdf2020/SignFacts2020-21-1.pdf",
+  "public/pdfs/SignFactsPdf2020/SignFacts2020-21-2.pdf",
+  "public/pdfs/SignFactsPdf2020/SignFacts2020-21-3.pdf",
+  "public/pdfs/SignFactsPdf2020/SignFacts2020-21-4.pdf",
+  "public/pdfs/SignFactsPdf2020/SignFacts2020-21-5.pdf",
+  "public/pdfs/SignFactsPdf2020/SignFacts2020-21-6.pdf",
+  "public/pdfs/SignFactsPdf2020/SignFacts2020-21-7-8.pdf",
+  "public/pdfs/SignFactsPdf2020/SignFacts2020-21-9.pdf",
+  "public/pdfs/SignFactsPdf2020/SignFacts2020-21-10.pdf",
+  "public/pdfs/SignFactsPdf2020/SignFacts2020-21-17.pdf",
+  "public/pdfs/SignFactsPdf2020/SignFacts2020-21-18.pdf",
+  "public/pdfs/SignFactsPdf2020/SignFacts2020-21-19.pdf",
+  "public/pdfs/SignFactsPdf2020/SignFacts2020-21-20.pdf",
+  "public/pdfs/SignFactsPdf2020/SignFacts2020-32.pdf",
+  "public/pdfs/SignFactsPdf2020/SignFacts2020-36.pdf"
 ];
 
   if (status === "loading" || !data) { 

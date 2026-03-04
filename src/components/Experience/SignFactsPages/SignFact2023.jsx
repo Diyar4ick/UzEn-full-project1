@@ -7,18 +7,18 @@ const SignFact2023 = () => {
   const textInfo = Array.isArray(data) ? data[0] : data;
 
   const factPdfLinks = [
-  'src/assets/pdfs/SignFactsPdf2023/signFacts2023-36.pdf',
-  'src/assets/pdfs/SignFactsPdf2023/signFacts2023-8.pdf',
-  'src/assets/pdfs/SignFactsPdf2023/signFacts2023-8.pdf',
-  'src/assets/pdfs/SignFactsPdf2023/signFacts2023-6.pdf',
-  'src/assets/pdfs/SignFactsPdf2023/signFacts2023-6.pdf',
-  'src/assets/pdfs/SignFactsPdf2023/signFacts2023-36.pdf',
-  'src/assets/pdfs/SignFactsPdf2023/signFacts2023-32.pdf',
-  'src/assets/pdfs/SignFactsPdf2023/signFacts2023-8.pdf',
-  'src/assets/pdfs/SignFactsPdf2023/signFacts2023-35.pdf',
-  'src/assets/pdfs/SignFactsPdf2023/signFacts2023-41.pdf',
-  'src/assets/pdfs/SignFactsPdf2023/signFacts2023-6.pdf',
-  'src/assets/pdfs/SignFactsPdf2023/signFacts2023-9.pdf'
+  'public/pdfs/SignFactsPdf2023/signFacts2023-36.pdf',
+  'public/pdfs/SignFactsPdf2023/signFacts2023-8.pdf',
+  'public/pdfs/SignFactsPdf2023/signFacts2023-8.pdf',
+  'public/pdfs/SignFactsPdf2023/signFacts2023-6.pdf',
+  'public/pdfs/SignFactsPdf2023/signFacts2023-6.pdf',
+  'public/pdfs/SignFactsPdf2023/signFacts2023-36.pdf',
+  'public/pdfs/SignFactsPdf2023/signFacts2023-32.pdf',
+  'public/pdfs/SignFactsPdf2023/signFacts2023-8.pdf',
+  'public/pdfs/SignFactsPdf2023/signFacts2023-35.pdf',
+  'public/pdfs/SignFactsPdf2023/signFacts2023-41.pdf',
+  'public/pdfs/SignFactsPdf2023/signFacts2023-6.pdf',
+  'public/pdfs/SignFactsPdf2023/signFacts2023-9.pdf'
   ];
 
   if (status === "loading" || !data) { 

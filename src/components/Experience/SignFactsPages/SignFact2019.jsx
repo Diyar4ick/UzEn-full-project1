@@ -8,19 +8,19 @@ const SignFact2019 = () => {
   const textInfo = Array.isArray(data) ? data[0] : data;
 
   const factPdfLinks = [
-    "src/assets/pdfs/SignFactsPdf2019/SignFacts2019-36.pdf",
-    "src/assets/pdfs/SignFactsPdf2019/SignFacts2019-36-2.pdf",
-    "src/assets/pdfs/SignFactsPdf2019/SignFacts2019-21-267.pdf",
-    "src/assets/pdfs/SignFactsPdf2019/SignFacts2019-6.pdf",
-    "src/assets/pdfs/SignFactsPdf2019/SignFacts2019-21-266.pdf",
-    "src/assets/pdfs/SignFactsPdf2019/SignFacts2019-21-263-265.pdf",
-    "src/assets/pdfs/SignFactsPdf2019/SignFacts2019-21-262.pdf",
-    "src/assets/pdfs/SignFactsPdf2019/SignFacts2019-21-261.pdf",
-    "src/assets/pdfs/SignFactsPdf2019/SignFacts2019-20.pdf",
-    "src/assets/pdfs/SignFactsPdf2019/SignFacts2019-8.pdf",
-    "src/assets/pdfs/SignFactsPdf2019/SignFacts2019-6.pdf", 
-    "src/assets/pdfs/SignFactsPdf2019/SignFacts2019-36.pdf",
-    "src/assets/pdfs/SignFactsPdf2019/SignFacts2019-22.pdf",
+    "public/pdfs/SignFactsPdf2019/SignFacts2019-36.pdf",
+    "public/pdfs/SignFactsPdf2019/SignFacts2019-36-2.pdf",
+    "public/pdfs/SignFactsPdf2019/SignFacts2019-21-267.pdf",
+    "public/pdfs/SignFactsPdf2019/SignFacts2019-6.pdf",
+    "public/pdfs/SignFactsPdf2019/SignFacts2019-21-266.pdf",
+    "public/pdfs/SignFactsPdf2019/SignFacts2019-21-263-265.pdf",
+    "public/pdfs/SignFactsPdf2019/SignFacts2019-21-262.pdf",
+    "public/pdfs/SignFactsPdf2019/SignFacts2019-21-261.pdf",
+    "public/pdfs/SignFactsPdf2019/SignFacts2019-20.pdf",
+    "public/pdfs/SignFactsPdf2019/SignFacts2019-8.pdf",
+    "public/pdfs/SignFactsPdf2019/SignFacts2019-6.pdf", 
+    "public/pdfs/SignFactsPdf2019/SignFacts2019-36.pdf",
+    "public/pdfs/SignFactsPdf2019/SignFacts2019-22.pdf",
   ];
 
   if (status === "loading" || !data) {
