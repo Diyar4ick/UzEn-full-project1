@@ -33,7 +33,7 @@ const FXDTable = () => {
                   <a href="">{textInfo?.blocks?.[0]?.table_link}</a>
                 </td>
               </tr>
-              
+               
              ))}
            
             </tbody>

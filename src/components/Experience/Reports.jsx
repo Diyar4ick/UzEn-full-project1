@@ -2,9 +2,20 @@ import { useSelector } from "react-redux";
 // import img3 from "../../assets/images/general/Icons/otchet.jpg";
 import Detail from "../Details/Detail";
 import Detail2 from "../Details/Detail2";
+import { Link } from "react-router-dom";
 
 const Reports = () => {
     const BASE_URL = import.meta.env.VITE_API_URL
+
+    const reportLinks = [
+      'emitent-report',
+      'year-report',
+      'cbrf-report',
+      'ifrs-report',
+      'rpi-report',
+      'autdit-conclusion',
+      'ku-report',
+    ]
 
     const { data, status } = useSelector((state) => state.text)
     const textInfo = Array.isArray(data) ? data[0] : data;
@@ -20,12 +31,20 @@ const Reports = () => {
         img: fullReportImg,
         title: reportCard?.[0]?.title || reportCard?.title,
         subtitle: reportCard?.[0]?.sutitle || reportCard?.sutitle,
-      }
+      } 
     })
 
     if (status === 'loading' || !data) {
       return <div>Загрузка...</div>
     }
+
+    // Emitent-report = Квартальные отчеты эммитента
+// Year-report = Годовые и квартальные отчеты
+// CBRF-report = Отчеты ЦКР РЦБ
+// IFRS-report = Отчеты МСФО
+// RPI-report = Перечень КПЭ
+// KU-report = Оценка КУ 
+
   return (
     <div className="corp-manage-page">
       <div className="container">
@@ -40,7 +59,7 @@ const Reports = () => {
               <span className="enter"></span>
               {reportCard.subtitle}
             </p>
-            <a href="">{textInfo?.blocks?.[0]?.button}</a>
+            <Link to={`/${reportLinks[idx]}`}>{textInfo?.blocks?.[0]?.button}</Link>
           </div>
           ))}
 

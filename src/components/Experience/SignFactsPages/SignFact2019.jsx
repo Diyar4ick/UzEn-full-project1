@@ -18,13 +18,13 @@ const SignFact2019 = () => {
     "src/assets/pdfs/SignFactsPdf2019/SignFacts2019-21-261.pdf",
     "src/assets/pdfs/SignFactsPdf2019/SignFacts2019-20.pdf",
     "src/assets/pdfs/SignFactsPdf2019/SignFacts2019-8.pdf",
-    "src/assets/pdfs/SignFactsPdf2019/SignFacts2019-6.pdf",
+    "src/assets/pdfs/SignFactsPdf2019/SignFacts2019-6.pdf", 
     "src/assets/pdfs/SignFactsPdf2019/SignFacts2019-36.pdf",
     "src/assets/pdfs/SignFactsPdf2019/SignFacts2019-22.pdf",
   ];
 
   if (status === "loading" || !data) {
-    return <div>Загрузка...</div>;
+    return <div>Загрузка...</div>; 
   }
   return (
     <div className="corp-manage-page">

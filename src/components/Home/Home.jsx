@@ -135,7 +135,7 @@ const Home = () => {
                 {textInfo?.blocks?.[2]?.title}
               </h2>
               <p className="home-page__section3-description">
-                {textInfo?.blocks?.[2]?.description}
+                {textInfo?.blocks?.[2]?.text}
               </p>
             </div>
             <div className="home-page__section3-cards">
