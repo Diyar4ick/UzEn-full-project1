@@ -8,13 +8,7 @@ const Reports = () => {
     const BASE_URL = import.meta.env.VITE_API_URL
 
     const reportLinks = [
-      'emitent-report',
-      'year-report',
-      'cbrf-report',
-      'ifrs-report',
-      'rpi-report',
-      'autdit-conclusion',
-      'ku-report',
+      'src/assets/pdfs/ReportZips/EmitentReportPdf.zip',
     ]
 
     const { data, status } = useSelector((state) => state.text)
@@ -59,7 +53,7 @@ const Reports = () => {
               <span className="enter"></span>
               {reportCard.subtitle}
             </p>
-            <Link to={`/${reportLinks[idx]}`}>{textInfo?.blocks?.[0]?.button}</Link>
+            <a href={`${reportLinks[idx]}`} download>{textInfo?.blocks?.[0]?.button}</a>
           </div>
           ))}
 

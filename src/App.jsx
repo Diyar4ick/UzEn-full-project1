@@ -36,12 +36,7 @@ import DividentInfo from "./components/Experience/DividentInfo"
 import BusinessPlanDoing from "./components/Experience/BusinessPlanDoing"
 import VotingResults from "./components/Experience/VotingResults"
 import BudgetDist from "./components/Experience/BudgetDist"
-import EmitentReport from "./components/Experience/RepoortsPages/EmitentReport"
-import YearReport from "./components/Experience/RepoortsPages/YearReport"
-import CBRFReport from "./components/Experience/RepoortsPages/CBRFReport"
-import IFRSReport from "./components/Experience/RepoortsPages/IFRSReport"
-import RPIReport from "./components/Experience/RepoortsPages/RPIReport"
-import KUReport from "./components/Experience/RepoortsPages/KUReport"
+
 
 function App() {
 
@@ -84,12 +79,6 @@ function App() {
         <Route path="/sign-fact2021" element={<SignFact2021/>}/>
         <Route path="/sign-fact2020" element={<SignFact2020/>}/>
         <Route path="/sign-fact2019" element={<SignFact2019/>}/>
-        <Route path="/emitent-report" element={<EmitentReport/>}/>
-        <Route path="/year-report" element={<YearReport/>}/>
-        <Route path="/cbrf-report" element={<CBRFReport/>}/>
-        <Route path="/ifrs-report" element={<IFRSReport/>}/>
-        <Route path="/rpi-report" element={<RPIReport/>}/>
-        <Route path="/ku-report" element={<KUReport/>}/>
        </Routes>
        <Footer/>
     </Router>
