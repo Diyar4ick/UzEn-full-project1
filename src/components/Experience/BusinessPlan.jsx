@@ -4,21 +4,21 @@ import Detail2 from "../Details/Detail2";
 
 const BusinessPlan = () => {
   const planLinks = [
-      'public/pdfs/BusinessPlansPdfs/bp2025_rus.pdf',
-      'public/pdfs/BusinessPlansPdfs/bp2024_rus.pdf',
-      'public/pdfs/BusinessPlansPdfs/bp2023_rus.pdf',
-      'public/pdfs/BusinessPlansPdfs/izm_BP_2022_rus.pdf',
-      'public/pdfs/BusinessPlansPdfs/bp2022_rus.pdf',
-      'public/pdfs/BusinessPlansPdfs/izm_BP_2021_rus.pdf',
-      'public/pdfs/BusinessPlansPdfs/bp2021_rus.pdf',
-      'public/pdfs/BusinessPlansPdfs/bp2020_rus.pdf',
-      'public/pdfs/BusinessPlansPdfs/bp2019_rus.pdf',
+      '/pdfs/BusinessPlansPdfs/bp2025_rus.pdf',
+      '/pdfs/BusinessPlansPdfs/bp2024_rus.pdf',
+      '/pdfs/BusinessPlansPdfs/bp2023_rus.pdf',
+      '/pdfs/BusinessPlansPdfs/izm_BP_2022_rus.pdf',
+      '/pdfs/BusinessPlansPdfs/bp2022_rus.pdf',
+      '/pdfs/BusinessPlansPdfs/izm_BP_2021_rus.pdf',
+      '/pdfs/BusinessPlansPdfs/bp2021_rus.pdf',
+      '/pdfs/BusinessPlansPdfs/bp2020_rus.pdf',
+      '/pdfs/BusinessPlansPdfs/bp2019_rus.pdf',
       '',
-      'public/pdfs/BusinessPlansPdfs/bp2017_rus.rar',
-      'public/pdfs/BusinessPlansPdfs/bp2016_rus.pdf',
-      'public/pdfs/BusinessPlansPdfs/izm_BP_2015_rus.pdf',
-      'public/pdfs/BusinessPlansPdfs/bp2015_rus.pdf',
-      'public/pdfs/BusinessPlansPdfs/bp2014_rus.pdf',
+      '/pdfs/BusinessPlansPdfs/bp2017_rus.rar',
+      '/pdfs/BusinessPlansPdfs/bp2016_rus.pdf',
+      '/pdfs/BusinessPlansPdfs/izm_BP_2015_rus.pdf',
+      '/pdfs/BusinessPlansPdfs/bp2015_rus.pdf',
+      '/pdfs/BusinessPlansPdfs/bp2014_rus.pdf',
     ]
 
   const { data, status } = useSelector((state) => state.text); 
