@@ -38,7 +38,7 @@ const BusinessPlan = () => {
              {textInfo?.blocks?.[0]?.table_description?.map((plan, idx) => (
               <tr key={idx}>
                 <td><p>{plan?.children?.[0]?.text}</p></td>
-                <td><a href={`${planLinks[idx]}`} target="_blank">{textInfo?.blocks[0]?.table_link}</a></td>
+                <td><a href={`${planLinks[idx]}`} download>{textInfo?.blocks[0]?.table_link}</a></td>
               </tr>
              ))}
             </tbody>
