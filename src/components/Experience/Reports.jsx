@@ -9,6 +9,12 @@ const Reports = () => {
 
     const reportLinks = [
       'src/assets/pdfs/ReportZips/EmitentReportPdf.zip',
+      'src/assets/pdfs/ReportZips/YearReportPdf.zip',
+      'src/assets/pdfs/ReportZips/CBRFReportPdf.zip',
+      'src/assets/pdfs/ReportZips/MSFOReportPdf.zip',
+      'src/assets/pdfs/ReportZips/KPIReportPdf.zip',
+      'src/assets/pdfs/ReportZips/AutditCReportPdf.zip',
+      'src/assets/pdfs/ReportZips/KUReportPdf.zip',
     ]
 
     const { data, status } = useSelector((state) => state.text)
