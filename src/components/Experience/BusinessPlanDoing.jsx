@@ -4,6 +4,12 @@ import Detail2 from "../Details/Detail2";
 
 const BusinessPlanDoing = () => {
 
+    const planLinks = [
+      '/pdfs/PlanDoing/pribil_rus.pdf',
+      '/pdfs/PlanDoing/sravtab_2022.pdf',
+      '/pdfs/PlanDoing/sravtabNSBU_2022.pdf',
+    ]
+
   const { data, status } = useSelector((state) => state.text);
   const textInfo = Array.isArray(data) ? data[0] : data;
 
@@ -11,7 +17,7 @@ const BusinessPlanDoing = () => {
     return <div>Загрузка...</div>;
   }
   return ( 
-    <div className="corp-manage-page">
+    <div className="corp-manage-page"> 
       <div className="container">
         <Detail/>
         <div className="corp-manage-page__content">
@@ -26,7 +32,7 @@ const BusinessPlanDoing = () => {
               {textInfo?.blocks?.[0]?.table_description?.map((planDoing, idx) => (
               <tr key={idx}>
                 <td><p>{planDoing?.children?.[0]?.text}</p></td>
-                <td><a href='' target="_blank">{textInfo?.blocks[0]?.table_link}</a></td>
+                <td><a href={`${planLinks[idx]}`} target="_blank">{textInfo?.blocks[0]?.table_link}</a></td>
               </tr>
              ))}
             </tbody>

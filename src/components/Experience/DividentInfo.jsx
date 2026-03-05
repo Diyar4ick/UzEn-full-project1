@@ -3,6 +3,13 @@ import Detail from "../Details/Detail";
 import Detail2 from "../Details/Detail2";
 
 const DividentInfo = () => {
+    const planLinks = [
+      '/pdfs/Dividents/divident_2025.pdf',
+      '/pdfs/Dividents/divident_2023.pdf',
+      '/pdfs/Dividents/divident_2022.pdf',
+      '/pdfs/Dividents/divident_2021.pdf',
+      '/pdfs/Dividents/divident_2020.pdf',
+    ]
 
   const { data, status } = useSelector((state) => state.text);
   const textInfo = Array.isArray(data) ? data[0] : data;
@@ -11,7 +18,7 @@ const DividentInfo = () => {
     return <div>Загрузка...</div>;
   }
   return (
-    <div className="corp-manage-page">
+    <div className="corp-manage-page"> 
       <div className="container">
         <Detail />
         <div className="corp-manage-page__content">
@@ -29,7 +36,7 @@ const DividentInfo = () => {
                     <p>{dividend?.children?.[0]?.text}</p>
                   </td>
                   <td>
-                    <a href="" target="_blank">
+                    <a href={`${planLinks[idx]}`} target="_blank">
                       {textInfo?.blocks[0]?.table_link}
                     </a>
                   </td>

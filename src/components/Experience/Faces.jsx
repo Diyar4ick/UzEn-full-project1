@@ -3,12 +3,25 @@ import Detail from "../Details/Detail";
 import Detail2 from "../Details/Detail2";
 
 const Faces = () => {
+  const planLinks = [
+      '/pdfs/Faces/afflic_2024.pdf',
+      '',
+      '/pdfs/Faces/afflic_2022.pdf',
+      '/pdfs/Faces/afflic_2022_2.pdf',
+      '/pdfs/Faces/afflic_2021.pdf',
+      '/pdfs/Faces/afflic_2020.pdf',
+      '/pdfs/Faces/afflic_2020_2.pdf',
+      '/pdfs/Faces/afflic_2019.pdf',
+      '/pdfs/Faces/afflic_2019_2.pdf',
+      '/pdfs/Faces/afflic_2019_3.pdf',
+      '/pdfs/Faces/afflic_2019_4.pdf',
+    ]
 
   const { data, status } = useSelector((state) => state.text);
   const textInfo = Array.isArray(data) ? data[0] : data;
 
   if (status === "loading" || !data) {
-    return <div>Загрузка...</div>;
+    return <div>Загрузка...</div>; 
   }
   return (
     <div className="corp-manage-page">
@@ -26,7 +39,7 @@ const Faces = () => {
               {textInfo?.blocks?.[0]?.table_description?.map((face, idx) => (
               <tr key={idx}>
                 <td><p>{face?.children?.[0]?.text}</p></td>
-                <td><a href='' target="_blank">{textInfo?.blocks[0]?.table_link}</a></td>
+                <td><a href={`${planLinks[idx]}`} target="_blank">{textInfo?.blocks[0]?.table_link}</a></td>
               </tr>
              ))}
             </tbody>

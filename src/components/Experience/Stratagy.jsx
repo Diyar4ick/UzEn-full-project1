@@ -3,6 +3,11 @@ import Detail from "../Details/Detail";
 import Detail2 from "../Details/Detail2";
 
 const Stratagy = () => {
+    const planLinks = [
+      '/pdfs/Stratagy/stratagy2022.pdf',
+      '/pdfs/Stratagy/stratagy2017_2021.pdf',
+      '/pdfs/Stratagy/stratagy2014.pdf',
+    ]
 
   const { data, status } = useSelector((state) => state.text);
   const textInfo = Array.isArray(data) ? data[0] : data;
@@ -12,7 +17,7 @@ const Stratagy = () => {
   }
 return (
  <div className="corp-manage-page">
-      <div className="container">
+      <div className="container"> 
        <Detail/>
         <div className="corp-manage-page__content">
           <h3 className="main-title">
@@ -23,7 +28,7 @@ return (
               {textInfo?.blocks?.[0]?.table_description?.map((stratagy, idx) => (
               <tr key={idx}>
                 <td><p>{stratagy?.children?.[0]?.text}</p></td>
-                <td><a href='' target="_blank">{textInfo?.blocks[0]?.table_link}</a></td>
+                <td><a href={`${planLinks[idx]}`} target="_blank">{textInfo?.blocks[0]?.table_link}</a></td>
               </tr>
              ))}
             </tbody>

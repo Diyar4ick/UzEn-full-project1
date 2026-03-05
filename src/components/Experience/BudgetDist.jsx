@@ -4,6 +4,11 @@ import Detail2 from "../Details/Detail2";
 
 const BudgetDist = () => {
 
+    const planLinks = [
+      '/pdfs/Budget/raspredeleniye_2024.pdf',
+      '/pdfs/Budget/raspredeleniye_2022.pdf',
+    ]
+
   const { data, status } = useSelector((state) => state.text);
   const textInfo = Array.isArray(data) ? data[0] : data;
 
@@ -11,7 +16,7 @@ const BudgetDist = () => {
     return <div>Загрузка...</div>;
   }
   return (
-    <div className="corp-manage-page">
+    <div className="corp-manage-page"> 
       <div className="container">
         <Detail/>
         <div className="corp-manage-page__content">
@@ -28,7 +33,7 @@ const BudgetDist = () => {
              {textInfo?.blocks?.[0]?.table_description?.map((budget, idx) => (
               <tr key={idx}>
                 <td><p>{budget?.children?.[0]?.text}</p></td>
-                <td><a href='' target="_blank">{textInfo?.blocks[0]?.table_link}</a></td>
+                <td><a href={`${planLinks[idx]}`} target="_blank">{textInfo?.blocks[0]?.table_link}</a></td>
               </tr>
              ))}
             </tbody>

@@ -4,6 +4,12 @@ import Detail2 from "../Details/Detail2";
 
 const Prospect = () => {
 
+    const planLinks = [
+      '/pdfs/Prospect/emissiya_2019.pdf',
+      '/pdfs/Prospect/emissiya_2017.pdf',
+      '/pdfs/Prospect/emissiya_2014.pdf',
+    ]
+
   const { data, status } = useSelector((state) => state.text);
   const textInfo = Array.isArray(data) ? data[0] : data;
 
@@ -23,10 +29,10 @@ const Prospect = () => {
                {textInfo?.blocks?.[0]?.table_description?.map((prospect, idx) => (
               <tr key={idx}>
                 <td><p>{prospect?.children?.[0]?.text}</p></td>
-                <td><a href='' target="_blank">{textInfo?.blocks[0]?.table_link}</a></td>
+                <td><a href={`${planLinks[idx]}`} target="_blank">{textInfo?.blocks[0]?.table_link}</a></td>
               </tr>
              ))}
-            </tbody>
+            </tbody> 
           </table>
         </div>
         <Detail2/>
