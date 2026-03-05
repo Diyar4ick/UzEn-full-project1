@@ -5,6 +5,7 @@ const FXDTable = () => {
       '/pdfs/FhdTable/sravtabNSBU_2024_rus.pdf',
       '/pdfs/FhdTable/sravtabNSBU_2023_rus.pdf',
       '/pdfs/FhdTable/sravtabNSBU_2022_rus.pdf',
+      '',
       '/pdfs/FhdTable/sravtab2020_rus.pdf',
     ]
 
