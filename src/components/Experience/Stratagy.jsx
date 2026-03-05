@@ -4,9 +4,9 @@ import Detail2 from "../Details/Detail2";
 
 const Stratagy = () => {
     const planLinks = [
-      '/pdfs/Stratagy/stratagy2022.pdf',
-      '/pdfs/Stratagy/stratagy2017_2021.pdf',
-      '/pdfs/Stratagy/stratagy2014.pdf',
+      '/pdfs/Stratagy/strategy2022.pdf',
+      '/pdfs/Stratagy/strategy2017_2021.pdf',
+      '/pdfs/Stratagy/strategy2014.pdf',
     ]
 
   const { data, status } = useSelector((state) => state.text);

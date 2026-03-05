@@ -5,11 +5,11 @@ import Detail2 from "../Details/Detail2";
 const VotingResults = () => {
 
     const planLinks = [
-      '/pdfs/VoteOse/protokol_ch_kom_2020.pdf',
-      '/pdfs/VoteOse/protokol_ch_kom_2021.pdf',
-      '/pdfs/VoteOse/protokol_ch_kom_2022.pdf',
-      '/pdfs/VoteOse/protokol_ch_kom_11_2022.pdf',
-      '/pdfs/VoteOse/protokol_ch_kom_12_2022.pdf',
+      '/pdfs/VoteOsa/protokol_ch_kom_2020.pdf',
+      '/pdfs/VoteOsa/protokol_ch_kom_2021.pdf',
+      '/pdfs/VoteOsa/protokol_ch_kom_2022.pdf',
+      '/pdfs/VoteOsa/protokol_ch_kom_11_2022.pdf',
+      '/pdfs/VoteOsa/protokol_ch_kom_12_2022.pdf',
     ]
 
   const { data, status } = useSelector((state) => state.text);
@@ -21,7 +21,7 @@ const VotingResults = () => {
   return (
     <div className="corp-manage-page">
       <div className="container">
-        <Detail/>
+        <Detail/> 
         <div className="corp-manage-page__content">
 
           <h3 className="main-title"> 
