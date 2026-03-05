@@ -1,6 +1,12 @@
 import { useSelector } from "react-redux";
 
 const FXDTable = () => {
+    const planLinks = [
+      '/pdfs/FhdTable/sravtabNSBU_2024_rus.pdf',
+      '/pdfs/FhdTable/sravtabNSBU_2023_rus.pdf',
+      '/pdfs/FhdTable/sravtabNSBU_2022_rus.pdf',
+      '/pdfs/FhdTable/sravtab2020_rus.pdf',
+    ]
 
   const { data, status } = useSelector((state) => state.text); 
   const textInfo = Array.isArray(data) ? data[0] : data;
@@ -8,7 +14,7 @@ const FXDTable = () => {
   if (status === "loading" || !data) {
     return <div>Загрузка...</div>;
   }
-  return (
+  return ( 
     <div className="FXD-table-page">
       <div className="container">
         <div className="FXD-table-page__table">
@@ -30,7 +36,7 @@ const FXDTable = () => {
                   </p>
                 </td>
                 <td>
-                  <a href="">{textInfo?.blocks?.[0]?.table_link}</a>
+                  <a href={`${planLinks[idx]}`} target="_blank">{textInfo?.blocks?.[0]?.table_link}</a>
                 </td>
               </tr>
                

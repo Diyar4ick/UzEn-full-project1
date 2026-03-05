@@ -10,7 +10,7 @@ const BusinessPlanDoing = () => {
   if (status === "loading" || !data) {
     return <div>Загрузка...</div>;
   }
-  return (
+  return ( 
     <div className="corp-manage-page">
       <div className="container">
         <Detail/>
