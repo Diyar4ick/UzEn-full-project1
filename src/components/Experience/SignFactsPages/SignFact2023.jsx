@@ -21,7 +21,7 @@ const SignFact2023 = () => {
   '/pdfs/SignFactsPdf2023/signFacts2023-9.pdf'
   ];
 
-  if (status === "loading" || !data) { 
+  if (status === "loading" || !data) {  
     return <div>Загрузка...</div>;
   } 
   return (

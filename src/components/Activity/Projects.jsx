@@ -29,7 +29,7 @@ const Projects = () => {
   const fullProjectImg1 = projectImg1Path
     ? `${BASE_URL}${projectImg1Path}`
     : null;
-  const fullProjectImg2 = projectImg2Path
+  const fullProjectImg2 = projectImg2Path 
     ? `${BASE_URL}${projectImg2Path}`
     : null;
   const fullProjectImg3 = projectImg3Path
@@ -73,6 +73,7 @@ const Projects = () => {
       img: projectImages[i], // массив картинок
       title: project?.[0]?.title || project?.title,
       description: project?.[0]?.description || project?.description,
+      year: project?.[0]?.year || project?.year,
     };
   });
 
@@ -91,12 +92,12 @@ const Projects = () => {
               <span className="projects-page__section1-project1-name">
                 <h3 className="bold">{project.title}</h3>
                 <span className="enter"></span>
-                <p>2021</p>
+                <p>{project.year}</p>
               </span>
               <ul className="projects-page__section1-project1-list">
                 <li>
                   <p>{project.description}</p>
-                  <span>2021.</span>
+                  <span>{project.year}</span>
                 </li>
               </ul>
             </div>

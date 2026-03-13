@@ -14,7 +14,7 @@
 // import logo2 from "../../assets/images/logo2.jpg";
 import Service1 from "../Services/Service1";
 import Service2 from "../Services/Service2";
-import Service3 from "../Services/Service3";
+import Service3 from "../Services/Service3"; 
 import { useSelector } from "react-redux";
 
 const Activity = () => {
