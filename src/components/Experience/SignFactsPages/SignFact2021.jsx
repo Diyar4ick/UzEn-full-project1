@@ -3,55 +3,17 @@ import Detail from "../../Details/Detail";
 import Detail2 from "../../Details/Detail2";
 
 const SignFact2021 = () => {
+  const BASE_URL = import.meta.env.VITE_API_URL
 
   const { data, status } = useSelector((state) => state.text);
   const textInfo = Array.isArray(data) ? data[0] : data;
 
-const factPdfLinks = [
-  "/pdfs/SignFactsPdf2021/signFacts2021-6.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-41.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-40.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-39.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-38.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-37.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-35-36.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-34.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-33.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-32.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-31.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-30.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-29.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-28.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-27.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-26.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-25.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-24.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-30-10.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-12.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-22.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-20.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-19.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-6.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-32-2.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-36.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-8.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-23.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-21-22.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-21-19.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-21-18.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-21-17.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-21-16.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-21-15.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-21-14.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-21-13.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-21-12.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-11.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-6-10.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-5.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-3-4.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-2.pdf",
-  "/pdfs/SignFactsPdf2021/signFacts2021-1.pdf"
-];
+const factPdfLinks = [];
+
+  for (let i = 1; i <= 43; i++) {
+    const url = textInfo?.blocks[0]?.[`pdf${i}`]?.url ? `${BASE_URL}${textInfo?.blocks[0]?.[`pdf${i}`]?.url}` : ''
+    factPdfLinks.push(url ? url : '')
+  }
 
   if (status === "loading" || !data) { 
     return <div>Загрузка...</div>;

@@ -2,24 +2,17 @@ import { useSelector } from "react-redux";
 import Detail from "../../Details/Detail";
 import Detail2 from "../../Details/Detail2";
 const SignFact2023 = () => {
+  const BASE_URL = import.meta.env.VITE_API_URL
 
   const { data, status } = useSelector((state) => state.text);
   const textInfo = Array.isArray(data) ? data[0] : data;
 
-  const factPdfLinks = [
-  '/pdfs/SignFactsPdf2023/signFacts2023-36.pdf',
-  '/pdfs/SignFactsPdf2023/signFacts2023-8.pdf',
-  '/pdfs/SignFactsPdf2023/signFacts2023-8.pdf',
-  '/pdfs/SignFactsPdf2023/signFacts2023-6.pdf',
-  '/pdfs/SignFactsPdf2023/signFacts2023-6.pdf',
-  '/pdfs/SignFactsPdf2023/signFacts2023-36.pdf',
-  '/pdfs/SignFactsPdf2023/signFacts2023-32.pdf',
-  '/pdfs/SignFactsPdf2023/signFacts2023-8.pdf',
-  '/pdfs/SignFactsPdf2023/signFacts2023-35.pdf',
-  '/pdfs/SignFactsPdf2023/signFacts2023-41.pdf',
-  '/pdfs/SignFactsPdf2023/signFacts2023-6.pdf',
-  '/pdfs/SignFactsPdf2023/signFacts2023-9.pdf'
-  ];
+  const factPdfLinks = []
+
+   for (let i = 1; i <= 12; i++) {
+    const url = textInfo?.blocks[0]?.[`pdf${i}`]?.url ? `${BASE_URL}${textInfo?.blocks[0]?.[`pdf${i}`]?.url}` : ''
+    factPdfLinks.push(url ? url : '')
+  }
 
   if (status === "loading" || !data) {  
     return <div>Загрузка...</div>;

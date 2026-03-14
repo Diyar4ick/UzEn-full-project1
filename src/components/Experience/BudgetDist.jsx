@@ -3,17 +3,19 @@ import Detail from "../Details/Detail";
 import Detail2 from "../Details/Detail2";
 
 const BudgetDist = () => {
-
-    const planLinks = [
-      '/pdfs/Budget/raspredeleniye_2024.pdf',
-      '/pdfs/Budget/raspredeleniye_2022.pdf',
-    ]
-
   const { data, status } = useSelector((state) => state.text);
   const textInfo = Array.isArray(data) ? data[0] : data;
 
+  const BASE_URL = import.meta.env.VITE_API_URL
+  
+  const planLinks = []
+  for (let i = 1; i <= 2; i++) {
+    const url = textInfo?.blocks[0]?.[`pdf${i}`]?.url ? `${BASE_URL}${textInfo?.blocks[0]?.[`pdf${i}`]?.url}` : ''
+    planLinks.push(url ? url : '')
+  }
+
   if (status === "loading" || !data) {
-    return <div>Загрузка...</div>;
+    return <div>Загрузка...</div>; 
   }
   return (
     <div className="corp-manage-page"> 

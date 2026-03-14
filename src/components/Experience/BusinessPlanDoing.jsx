@@ -3,15 +3,18 @@ import Detail from "../Details/Detail";
 import Detail2 from "../Details/Detail2";
 
 const BusinessPlanDoing = () => {
-
-    const planLinks = [
-      '/pdfs/PlanDoing/pribil_rus.pdf',
-      '/pdfs/PlanDoing/sravtab_2022.pdf',
-      '/pdfs/PlanDoing/sravtabNSBU_2022.pdf',
-    ]
+  const BASE_URL = import.meta.env.VITE_API_URL
 
   const { data, status } = useSelector((state) => state.text);
   const textInfo = Array.isArray(data) ? data[0] : data;
+
+    const planLinks = []
+
+  for (let i = 1; i <= 3; i++) {
+    const url = textInfo?.blocks[0]?.[`pdf${i}`]?.url ? `${BASE_URL}${textInfo?.blocks[0]?.[`pdf${i}`]?.url}` : ''
+    planLinks.push(url ? url : '')
+  }
+
 
   if (status === "loading" || !data) {
     return <div>Загрузка...</div>;
@@ -20,7 +23,7 @@ const BusinessPlanDoing = () => {
     <div className="corp-manage-page"> 
       <div className="container">
         <Detail/>
-        <div className="corp-manage-page__content">
+        <div className="corp-manage-page__content"> 
           <h3 className="main-title">
             {textInfo?.blocks?.[0]?.title}
           </h3>

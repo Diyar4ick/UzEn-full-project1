@@ -3,6 +3,7 @@ import Detail from "../Details/Detail";
 import Detail2 from "../Details/Detail2";
 
 const CorpManage = () => {
+  const BASE_URL = import.meta.env.VITE_API_URL
 
   const { data, status } = useSelector((state) => state.text);
   const textInfo = Array.isArray(data) ? data[0] : data;
@@ -17,8 +18,14 @@ const CorpManage = () => {
     };
   });
 
+  const factPdfLinks = [];
+  for (let i = 1; i <= 6; i++) {
+    const url = textInfo?.blocks[0]?.[`pdf${i}`]?.url ? `${BASE_URL}${textInfo?.blocks[0]?.[`pdf${i}`]?.url}` : ''
+    factPdfLinks.push(url ? url : '')
+  }
+
   if (status === "loading" || !data) { 
-    return <div>Загрузка...</div>;
+    return <div>Загрузка...</div>; 
   } 
   return (
     <div className="corp-manage-page">
@@ -44,7 +51,7 @@ const CorpManage = () => {
                     <p>{serviceCard?.content}</p>
                   </td>
                   <td>
-                    <a href="">{textInfo?.blocks?.[0]?.table_link}</a>
+                    <a href={factPdfLinks[idx]} target="_blank">{textInfo?.blocks?.[0]?.table_link}</a>
                   </td>
                 </tr>
               ))}
@@ -69,7 +76,8 @@ const CorpManage = () => {
                   </p>
                 </td>
                 <td>
-                  <a href="">{textInfo?.blocks?.[0]?.table_link}</a>
+                  <a href={factPdfLinks[6]} target="_blank">{textInfo?.blocks?.[0]?.table_link}</a> 
+                  {/* Сделанно на костылях в будущем мб нужно будет оптимизация */}
                 </td>
               </tr>
             </tbody>

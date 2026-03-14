@@ -3,20 +3,20 @@ import Detail from "../Details/Detail";
 import Detail2 from "../Details/Detail2";
 
 const VotingResults = () => {
-
-    const planLinks = [
-      '/pdfs/VoteOsa/protokol_ch_kom_2020.pdf',
-      '/pdfs/VoteOsa/protokol_ch_kom_2021.pdf',
-      '/pdfs/VoteOsa/protokol_ch_kom_2022.pdf',
-      '/pdfs/VoteOsa/protokol_ch_kom_11_2022.pdf',
-      '/pdfs/VoteOsa/protokol_ch_kom_12_2022.pdf',
-    ]
-
   const { data, status } = useSelector((state) => state.text);
   const textInfo = Array.isArray(data) ? data[0] : data;
 
+  const BASE_URL = import.meta.env.VITE_API_URL
+
+  const planLinks = []
+  for (let i = 1; i <= 5; i++) {
+    const url = textInfo?.blocks[0]?.[`pdf${i}`]?.url ? `${BASE_URL}${textInfo?.blocks[0]?.[`pdf${i}`]?.url}` : ''
+    planLinks.push(url ? url : '')
+  }
+
+
   if (status === "loading" || !data) {
-    return <div>Загрузка...</div>;
+    return <div>Загрузка...</div>; 
   }
   return (
     <div className="corp-manage-page">

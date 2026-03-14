@@ -3,22 +3,17 @@ import Detail from "../Details/Detail";
 import Detail2 from "../Details/Detail2";
 
 const Faces = () => {
-  const planLinks = [
-      '/pdfs/Faces/afflic_2024.pdf',
-      '',
-      '/pdfs/Faces/afflic_2022.pdf',
-      '/pdfs/Faces/afflic_2022_2.pdf',
-      '/pdfs/Faces/afflic_2021.pdf',
-      '/pdfs/Faces/afflic_2020.pdf',
-      '/pdfs/Faces/afflic_2020_2.pdf',
-      '/pdfs/Faces/afflic_2019.pdf',
-      '/pdfs/Faces/afflic_2019_2.pdf',
-      '/pdfs/Faces/afflic_2019_3.pdf',
-      '/pdfs/Faces/afflic_2019_4.pdf',
-    ]
+  const BASE_URL = import.meta.env.VITE_API_URL
 
   const { data, status } = useSelector((state) => state.text);
   const textInfo = Array.isArray(data) ? data[0] : data;
+
+
+  const planLinks = [];
+  for (let i = 1; i <= 13; i++) {
+    const url = textInfo?.blocks[0]?.[`pdf${i}`]?.url ? `${BASE_URL}${textInfo?.blocks[0]?.[`pdf${i}`]?.url}` : ''
+    planLinks.push(url ? url : '')
+  }
 
   if (status === "loading" || !data) {
     return <div>Загрузка...</div>; 

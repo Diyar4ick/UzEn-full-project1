@@ -3,6 +3,7 @@ import Detail from "../Details/Detail";
 import Detail2 from "../Details/Detail2";
 
 const AutditConc = () => {
+  const BASE_URL = import.meta.env.VITE_API_URL
 
   const { data, status } = useSelector((state) => state.text);
   const textInfo = Array.isArray(data) ? data[0] : data;
@@ -10,7 +11,7 @@ const AutditConc = () => {
   if (status === "loading" || !data) {
     return <div>Загрузка...</div>;
   }
-  return (
+  return ( 
     <div className="corp-manage-page">
       <div className="container">
         <Detail/> 
@@ -21,7 +22,7 @@ const AutditConc = () => {
               {textInfo?.blocks?.[0]?.table_description1?.map((face, idx) => (
               <tr key={idx}>
                 <td><p>{face?.children?.[0]?.text}</p></td>
-                <td><a href='/pdfs/ReportZips/AutditCReportPdf.zip' download>{textInfo?.blocks[0]?.table_link}</a></td>
+                <td><a href={textInfo?.blocks[0]?.zip?.url ? `${BASE_URL}${textInfo?.blocks[0]?.zip?.url}` : ''} download>{textInfo?.blocks[0]?.table_link}</a></td>
               </tr>
              ))}
             </tbody>

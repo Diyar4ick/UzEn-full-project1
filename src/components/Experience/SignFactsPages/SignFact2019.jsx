@@ -3,31 +3,22 @@ import Detail from "../../Details/Detail";
 import Detail2 from "../../Details/Detail2";
 
 const SignFact2019 = () => {
+  const BASE_URL = import.meta.env.VITE_API_URL
 
   const { data, status } = useSelector((state) => state.text);
   const textInfo = Array.isArray(data) ? data[0] : data;
 
-  const factPdfLinks = [
-    "/pdfs/SignFactsPdf2019/SignFacts2019-36.pdf",
-    "/pdfs/SignFactsPdf2019/SignFacts2019-36-2.pdf",
-    "/pdfs/SignFactsPdf2019/SignFacts2019-21-267.pdf",
-    "/pdfs/SignFactsPdf2019/SignFacts2019-6.pdf",
-    "/pdfs/SignFactsPdf2019/SignFacts2019-21-266.pdf",
-    "/pdfs/SignFactsPdf2019/SignFacts2019-21-263-265.pdf",
-    "/pdfs/SignFactsPdf2019/SignFacts2019-21-262.pdf",
-    "/pdfs/SignFactsPdf2019/SignFacts2019-21-261.pdf",
-    "/pdfs/SignFactsPdf2019/SignFacts2019-20.pdf",
-    "/pdfs/SignFactsPdf2019/SignFacts2019-8.pdf",
-    "/pdfs/SignFactsPdf2019/SignFacts2019-6.pdf", 
-    "/pdfs/SignFactsPdf2019/SignFacts2019-36.pdf",
-    "/pdfs/SignFactsPdf2019/SignFacts2019-22.pdf",
-  ];
+  const factPdfLinks = [];
+  for (let i = 1; i <= 13; i++) {
+    const url = textInfo?.blocks[0]?.[`pdf${i}`]?.url ? `${BASE_URL}${textInfo?.blocks[0]?.[`pdf${i}`]?.url}` : ''
+    factPdfLinks.push(url ? url : '')
+  }
 
   if (status === "loading" || !data) {
     return <div>Загрузка...</div>; 
   }
   return (
-    <div className="corp-manage-page">
+    <div className="corp-manage-page"> 
       <div className="container">
         <Detail />
         <div className="corp-manage-page__content">

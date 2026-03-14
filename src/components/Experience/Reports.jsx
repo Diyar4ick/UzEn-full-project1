@@ -6,19 +6,14 @@ import { Link } from "react-router-dom";
 
 const Reports = () => {
     const BASE_URL = import.meta.env.VITE_API_URL
-
-    const reportLinks = [
-      'src/assets/pdfs/ReportZips/EmitentReportPdf.zip',
-      'src/assets/pdfs/ReportZips/YearReportPdf.zip',
-      'src/assets/pdfs/ReportZips/CBRFReportPdf.zip',
-      'src/assets/pdfs/ReportZips/MSFOReportPdf.zip',
-      'src/assets/pdfs/ReportZips/KPIReportPdf.zip',
-      'src/assets/pdfs/ReportZips/AutditCReportPdf.zip',
-      'src/assets/pdfs/ReportZips/KUReportPdf.zip',
-    ]
-
     const { data, status } = useSelector((state) => state.text)
     const textInfo = Array.isArray(data) ? data[0] : data;
+    const reportLinks = []
+
+  for (let i = 1; i <= 7; i++) {
+    const url = textInfo?.blocks[0]?.[`zip${i}`]?.url ? `${BASE_URL}${textInfo?.blocks[0]?.[`zip${i}`]?.url}` : ''
+    reportLinks.push(url ? url : '')
+  }
 
     const reportImgPath = textInfo?.blocks?.[0]?.report_img?.[0]?.url
     const fullReportImg = reportImgPath ? `${BASE_URL}${reportImgPath}` : null
@@ -45,7 +40,7 @@ const Reports = () => {
 // RPI-report = Перечень КПЭ
 // KU-report = Оценка КУ 
 
-  return (
+  return ( 
     <div className="corp-manage-page">
       <div className="container">
         <Detail/>

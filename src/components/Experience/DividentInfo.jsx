@@ -3,20 +3,20 @@ import Detail from "../Details/Detail";
 import Detail2 from "../Details/Detail2";
 
 const DividentInfo = () => {
-    const planLinks = [
-      '/pdfs/Dividents/divident_2025.pdf',
-      '/pdfs/Dividents/divident_2023.pdf',
-      '/pdfs/Dividents/divident_2022.pdf',
-      '/pdfs/Dividents/divident_2021.pdf',
-      '/pdfs/Dividents/divident_2020.pdf',
-    ]
+    const BASE_URL = import.meta.env.VITE_API_URL
+    const { data, status } = useSelector((state) => state.text);
+    const textInfo = Array.isArray(data) ? data[0] : data;
 
-  const { data, status } = useSelector((state) => state.text);
-  const textInfo = Array.isArray(data) ? data[0] : data;
+    const planLinks = []
+
+  for (let i = 1; i <= 5; i++) {
+    const url = textInfo?.blocks[0]?.[`pdf${i}`]?.url ? `${BASE_URL}${textInfo?.blocks[0]?.[`pdf${i}`]?.url}` : ''
+    planLinks.push(url ? url : '')
+  }
 
   if (status === "loading" || !data) {
-    return <div>Загрузка...</div>;
-  }
+    return <div>Загрузка...</div>; 
+  } 
   return (
     <div className="corp-manage-page"> 
       <div className="container">

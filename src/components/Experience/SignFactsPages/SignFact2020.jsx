@@ -3,29 +3,16 @@ import Detail from "../../Details/Detail";
 import Detail2 from "../../Details/Detail2";
 
 const SignFact2020 = () => {
+  const BASE_URL = import.meta.env.VITE_API_URL
 
   const { data, status } = useSelector((state) => state.text);
   const textInfo = Array.isArray(data) ? data[0] : data;
 
-  const factPdfLinks = [
-  "/pdfs/SignFactsPdf2020/SignFacts2020-6.pdf",
-  "/pdfs/SignFactsPdf2020/SignFacts2020-8.pdf",
-  "/pdfs/SignFactsPdf2020/SignFacts2020-21-1.pdf",
-  "/pdfs/SignFactsPdf2020/SignFacts2020-21-2.pdf",
-  "/pdfs/SignFactsPdf2020/SignFacts2020-21-3.pdf",
-  "/pdfs/SignFactsPdf2020/SignFacts2020-21-4.pdf",
-  "/pdfs/SignFactsPdf2020/SignFacts2020-21-5.pdf",
-  "/pdfs/SignFactsPdf2020/SignFacts2020-21-6.pdf",
-  "/pdfs/SignFactsPdf2020/SignFacts2020-21-7-8.pdf",
-  "/pdfs/SignFactsPdf2020/SignFacts2020-21-9.pdf",
-  "/pdfs/SignFactsPdf2020/SignFacts2020-21-10.pdf",
-  "/pdfs/SignFactsPdf2020/SignFacts2020-21-17.pdf",
-  "/pdfs/SignFactsPdf2020/SignFacts2020-21-18.pdf",
-  "/pdfs/SignFactsPdf2020/SignFacts2020-21-19.pdf",
-  "/pdfs/SignFactsPdf2020/SignFacts2020-21-20.pdf",
-  "/pdfs/SignFactsPdf2020/SignFacts2020-32.pdf",
-  "/pdfs/SignFactsPdf2020/SignFacts2020-36.pdf"
-];
+  const factPdfLinks = [];
+  for (let i = 1; i <= 24; i++) {
+    const url = textInfo?.blocks[0]?.[`pdf${i}`]?.url ? `${BASE_URL}${textInfo?.blocks[0]?.[`pdf${i}`]?.url}` : ''
+    factPdfLinks.push(url ? url : '')
+  }
 
   if (status === "loading" || !data) { 
     return <div>Загрузка...</div>;

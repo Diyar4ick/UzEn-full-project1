@@ -10,12 +10,14 @@ const SignFact2024 = () => {
 // 
   const factPdfLinks = [];
 
-  for (let i = 1; i <= 30; i++) {
+  for (let i = 1; i <= 31; i++) {
     const url = textInfo?.blocks[0]?.[`pdf${i}`]?.url ? `${BASE_URL}${textInfo?.blocks[0]?.[`pdf${i}`]?.url}` : ''
     factPdfLinks.push(url ? url : '')
   }
  //
 
+ console.log(factPdfLinks);
+ 
 
   if (status === "loading" || !data) { 
     return <div>Загрузка...</div>;

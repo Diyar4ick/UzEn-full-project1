@@ -2,42 +2,16 @@ import { useSelector } from "react-redux";
 import Detail from "../../Details/Detail";
 import Detail2 from "../../Details/Detail2";
 const SignFact2022 = () => {
+  const BASE_URL = import.meta.env.VITE_API_URL
 
   const { data, status } = useSelector((state) => state.text);
   const textInfo = Array.isArray(data) ? data[0] : data;
 
-  const factPdfLinks = [
-  "/pdfs/SignFactsPdf2022/signFacts2022-6.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-21.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-21.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-36.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-8.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-6.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-22.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-21.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-21.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-21.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-36.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-32.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-8.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-6.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-21.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-35.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-6.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-9.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-21.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-21.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-21.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-21.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-21.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-35.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-21.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-21.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-6.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-21.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-21.pdf",
-  "/pdfs/SignFactsPdf2022/signFacts2022-21.pdf"
-];
+  const factPdfLinks = [];
+  for (let i = 1; i <= 30; i++) {
+    const url = textInfo?.blocks[0]?.[`pdf${i}`]?.url ? `${BASE_URL}${textInfo?.blocks[0]?.[`pdf${i}`]?.url}` : ''
+    factPdfLinks.push(url ? url : '')
+  }
 
   if (status === "loading" || !data) { 
     return <div>Загрузка...</div>;

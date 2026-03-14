@@ -1,20 +1,20 @@
 import { useSelector } from "react-redux";
 
 const FXDTable = () => {
-    const planLinks = [
-      '/pdfs/FhdTable/sravtabNSBU_2024_rus.pdf',
-      '/pdfs/FhdTable/sravtabNSBU_2023_rus.pdf',
-      '/pdfs/FhdTable/sravtabNSBU_2022_rus.pdf',
-      '',
-      '/pdfs/FhdTable/sravtab2020_rus.pdf',
-    ]
-
+  const BASE_URL = import.meta.env.VITE_API_URL
   const { data, status } = useSelector((state) => state.text); 
   const textInfo = Array.isArray(data) ? data[0] : data;
+  const planLinks = []
+
+  for (let i = 1; i <= 5; i++) {
+    const url = textInfo?.blocks[0]?.[`pdf${i}`]?.url ? `${BASE_URL}${textInfo?.blocks[0]?.[`pdf${i}`]?.url}` : ''
+    planLinks.push(url ? url : '')
+  }
 
   if (status === "loading" || !data) {
     return <div>Загрузка...</div>;
   }
+
   return ( 
     <div className="FXD-table-page">
       <div className="container">
