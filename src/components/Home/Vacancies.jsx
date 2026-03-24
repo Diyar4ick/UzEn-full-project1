@@ -11,7 +11,7 @@ const Vacancies = () => {
 
   return (
     <div className="vacancy-page container">
-      {/* <h3 className="main-title">{textInfo?.title}</h3> */}
+      {/* <h3 className="main-title">{textInfo?.title}</h3> */} 
       <div className="vacancy-page__card">
         <div className="vacancy-page__content1">
          <p>

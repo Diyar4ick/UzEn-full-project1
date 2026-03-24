@@ -996,7 +996,7 @@
     padding: var(--space-10);
     background: var(--neutral-50);
     border-radius: var(--radius-md);
-    border-left: 4px solid var(--accent-dark);
+    // border-left: 4px solid var(--accent-dark);
 
     @include media(768) {
       margin-top: var(--space-10);
@@ -1315,7 +1315,7 @@
 
 /* Структура общества: первая секция — заголовок, изображение, текст */
 .structure-page__section1.container {
-  max-width: 1000px;
+  max-width: 1300px;
   margin-left: auto;
   margin-right: auto;
   padding-left: var(--space-6);
@@ -1333,7 +1333,7 @@
   > img {
     width: 100%;
     height: auto;
-    max-height: 400px;
+    max-height: 850px;
     object-fit: cover;
     border-radius: var(--radius-md);
     margin-bottom: var(--space-8);
@@ -1354,7 +1354,7 @@
     padding: var(--space-8);
     background: var(--neutral-50);
     border-radius: var(--radius-md);
-    border-left: 4px solid var(--accent-dark);
+    // border-left: 4px solid var(--accent-dark);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 
     @include media(768) {

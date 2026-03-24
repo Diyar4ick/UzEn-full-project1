@@ -16,7 +16,7 @@ const Structure = () => {
   const BASE_URL = import.meta.env.VITE_API_URL
 
   const { data, status } = useSelector((state) => state.text);
-  const textInfo = Array.isArray(data) ? data[0] : data;
+  const textInfo = Array.isArray(data) ? data[0] : data; 
 
   const structureImgPath = textInfo?.blocks?.[0]?.structure?.[0]?.url
   const departmentImg1Path = textInfo?.blocks?.[1]?.department_img1?.[0]?.url
