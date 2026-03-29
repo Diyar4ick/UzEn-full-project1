@@ -185,70 +185,71 @@ const Structure = () => {
             {textInfo?.blocks?.[0]?.description?.[41]?.children?.[0]?.text}
             <span className="enter"></span>
             {textInfo?.blocks?.[0]?.description?.[42]?.children?.[0]?.text}
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             <span className="bold">
               {textInfo?.blocks?.[0]?.description?.[43]?.children?.[0]?.text}
             </span>
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             {textInfo?.blocks?.[0]?.description?.[44]?.children?.[0]?.text}
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             <span className="bold">
               {textInfo?.blocks?.[0]?.description?.[45]?.children?.[0]?.text}
             </span>
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             {textInfo?.blocks?.[0]?.description?.[46]?.children?.[0]?.text}
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             <span className="bold">
               {textInfo?.blocks?.[0]?.description?.[47]?.children?.[0]?.text}
               </span>
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             {textInfo?.blocks?.[0]?.description?.[48]?.children?.[0]?.text}
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             {textInfo?.blocks?.[0]?.description?.[49]?.children?.[0]?.text}
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
+            
             {textInfo?.blocks?.[0]?.description?.[50]?.children?.[0]?.text}
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             <span className="bold">
               {textInfo?.blocks?.[0]?.description?.[51]?.children?.[0]?.text}
             </span>
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             {textInfo?.blocks?.[0]?.description?.[52]?.children?.[0]?.text}
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             {textInfo?.blocks?.[0]?.description?.[53]?.children?.[0]?.text}
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             <span className="bold">
              {textInfo?.blocks?.[0]?.description?.[54]?.children?.[0]?.text}
             </span>
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             {textInfo?.blocks?.[0]?.description?.[55]?.children?.[0]?.text}
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             {textInfo?.blocks?.[0]?.description?.[56]?.children?.[0]?.text}
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             <span className="bold">
               {textInfo?.blocks?.[0]?.description?.[57]?.children?.[0]?.text}
             </span>
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             {textInfo?.blocks?.[0]?.description?.[58]?.children?.[0]?.text}
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             {textInfo?.blocks?.[0]?.description?.[59]?.children?.[0]?.text}
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             {textInfo?.blocks?.[0]?.description?.[60]?.children?.[0]?.text}
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             {textInfo?.blocks?.[0]?.description?.[61]?.children?.[0]?.text}
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             {textInfo?.blocks?.[0]?.description?.[62]?.children?.[0]?.text}
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
           {textInfo?.blocks?.[0]?.description?.[63]?.children?.[0]?.text}
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             {textInfo?.blocks?.[0]?.description?.[64]?.children?.[0]?.text}
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             {textInfo?.blocks?.[0]?.description?.[65]?.children?.[0]?.text}
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             {textInfo?.blocks?.[0]?.description?.[66]?.children?.[0]?.text}
-            <span className="enter"></span>
+            {/* <span className="enter"></span> */}
             {textInfo?.blocks?.[0]?.description?.[67]?.children?.[0]?.text}
           </p>
-        </section>
+        </section> 
         <section className="structure-page__section2">
           <div className="container">
             <h3 className="main-title">{textInfo?.blocks?.[1]?.title}</h3>

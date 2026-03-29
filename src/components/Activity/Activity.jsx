@@ -23,10 +23,10 @@ const Activity = () => {
   const { data, status } = useSelector((state) => state.text);
   const textInfo = Array.isArray(data) ? data[0] : data;
 
-  const logoPath = textInfo?.blocks?.[3]?.logo?.[0]?.url;
+  // const logoPath = textInfo?.blocks?.[3]?.logo?.[0]?.url;
   const bannerPath = textInfo?.blocks?.[3]?.backround?.[0]?.url;
 
-  const fullLogo = logoPath ? `${BASE_URL}${logoPath}` : null;
+  // const fullLogo = logoPath ? `${BASE_URL}${logoPath}` : null;
   const fullBanner = bannerPath ? `${BASE_URL}${bannerPath}` : null;
 
   const companyIcons = [];
@@ -48,10 +48,10 @@ const Activity = () => {
       <Service2 />
       <Service3 />
       <section className="activity-page__section3">
-        <div className="activity-page__section3-nav">
+        {/* <div className="activity-page__section3-nav">
           <h3 className="main-title">{textInfo?.blocks?.[3]?.title}</h3>
           <img src={fullLogo} alt="" className="logo-2" />
-        </div>
+        </div> */}
         <img
           src={fullBanner}
           alt=""
