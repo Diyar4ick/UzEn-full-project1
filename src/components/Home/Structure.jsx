@@ -8,7 +8,7 @@
 // import department7 from "../../assets/images/structure/department-img7.jpg";
 // import department8 from "../../assets/images/structure/department-img8.jpg";
 
-import branch1 from "../../assets/images/structure/branch-img1.jpg";
+// import branch1 from "../../assets/images/structure/branch-img1.jpg";
 import StructureBanner from "../Banners/StructureBanner";
 import { useSelector } from "react-redux";
 
@@ -485,7 +485,7 @@ const Structure = () => {
                 </div>
               </div>
             </div>
-            <h3 className="main-title">{textInfo?.blocks?.[2]?.title}</h3>
+            {/* <h3 className="main-title">{textInfo?.blocks?.[2]?.title}</h3>
             <div className="structure-page__section2-card">
               <img src={branch1} alt="" />
               <div className="structure-page__section2-card-content">
@@ -512,7 +512,7 @@ const Structure = () => {
                   </li>
                 </ul>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
       </div>
