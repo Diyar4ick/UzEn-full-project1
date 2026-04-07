@@ -7,7 +7,7 @@
 // import news2 from "../../assets/images/news/news-newyear-2026.jpg";
 // import news3 from "../../assets/images/news/news-engineering-day.jpg";
 // import { Link } from "react-router-dom";
-import { HashLink as Link } from 'react-router-hash-link';
+import { HashLink as Link } from "react-router-hash-link";
 import homeBanner from "../../assets/images/homePages/homePageBanner.jpg";
 
 // import areasImg1 from "../../assets/images/homePages/homePageSection3-1.jpg";
@@ -24,7 +24,7 @@ const Home = () => {
   const { data, status } = useSelector((state) => state.text);
   const textInfo = Array.isArray(data) ? data[0] : data;
 
-  const BASE_URL = import.meta.env.VITE_API_URL
+  const BASE_URL = import.meta.env.VITE_API_URL;
   //section 1 and 2
   const iconLeftPath = textInfo?.blocks?.[0]?.icon_banner_left?.[0]?.url;
   const iconRightPath = textInfo?.blocks?.[1]?.icon_banner_right?.[0]?.url;
@@ -66,20 +66,20 @@ const Home = () => {
     ? `${BASE_URL}${newsCardImg3Path}`
     : null;
 
-    // section5 
-    const serviceImgPath = textInfo?.blocks?.[4]?.img?.[0]?.url    
-    const fullServiceImg = serviceImgPath ? `${BASE_URL}${serviceImgPath}` : null
+  // section5
+  const serviceImgPath = textInfo?.blocks?.[4]?.img?.[0]?.url;
+  const fullServiceImg = serviceImgPath ? `${BASE_URL}${serviceImgPath}` : null;
 
-    //section6
-    const sphereImg1Path = textInfo?.blocks?.[5]?.banner1?.[0]?.url
-    const sphereImg2Path = textInfo?.blocks?.[5]?.banner2?.[0]?.url
-    const sphereImg3Path = textInfo?.blocks?.[5]?.banner3?.[0]?.url
-    const sphereImg4Path = textInfo?.blocks?.[5]?.banner4?.[0]?.url
+  //section6
+  const sphereImg1Path = textInfo?.blocks?.[5]?.banner1?.[0]?.url;
+  const sphereImg2Path = textInfo?.blocks?.[5]?.banner2?.[0]?.url;
+  const sphereImg3Path = textInfo?.blocks?.[5]?.banner3?.[0]?.url;
+  const sphereImg4Path = textInfo?.blocks?.[5]?.banner4?.[0]?.url;
 
-    const fullSphereImg1 = sphereImg1Path ? `${BASE_URL}${sphereImg1Path}` : null
-    const fullSphereImg2 = sphereImg2Path ? `${BASE_URL}${sphereImg2Path}` : null
-    const fullSphereImg3 = sphereImg3Path ? `${BASE_URL}${sphereImg3Path}` : null
-    const fullSphereImg4 = sphereImg4Path ? `${BASE_URL}${sphereImg4Path}` : null
+  const fullSphereImg1 = sphereImg1Path ? `${BASE_URL}${sphereImg1Path}` : null;
+  const fullSphereImg2 = sphereImg2Path ? `${BASE_URL}${sphereImg2Path}` : null;
+  const fullSphereImg3 = sphereImg3Path ? `${BASE_URL}${sphereImg3Path}` : null;
+  const fullSphereImg4 = sphereImg4Path ? `${BASE_URL}${sphereImg4Path}` : null;
 
   if (status === "loading" || !data) {
     return <div>Загрузка...</div>;
@@ -213,12 +213,14 @@ const Home = () => {
             <img src={fullServiceImg} alt="" className="" />
             <div className="home-page__section5-content">
               <h3 className="main-title">{textInfo?.blocks?.[4]?.title}</h3>
-              <p className="main-subtitle">
-                {textInfo?.blocks?.[4]?.subtitle}
-              </p>
+              <p className="main-subtitle">{textInfo?.blocks?.[4]?.subtitle}</p>
               <ul className="home-page__section5-worklist">
                 <li className="home-page__section5-task">
-                  <Link smooth to="/activity#service1" className="home-page__section5-work">
+                  <Link
+                    smooth
+                    to="/activity#service1"
+                    className="home-page__section5-work"
+                  >
                     {textInfo?.blocks?.[4]?.link1}
                   </Link>
                   <ul>
@@ -230,7 +232,11 @@ const Home = () => {
                   </ul>
                 </li>
                 <li className="home-page__section5-task">
-                  <Link smooth to="/activity#service2" className="home-page__section5-work">
+                  <Link
+                    smooth
+                    to="/activity#service2"
+                    className="home-page__section5-work"
+                  >
                     {textInfo?.blocks?.[4]?.link2}
                   </Link>
                   <ul>
@@ -242,8 +248,13 @@ const Home = () => {
                   </ul>
                 </li>
                 <li className="home-page__section5-task">
-                  <Link smooth to="/activity#service3" p className="home-page__section5-work">
-                   {textInfo?.blocks?.[4]?.link3}
+                  <Link
+                    smooth
+                    to="/activity#service3"
+                    p
+                    className="home-page__section5-work"
+                  >
+                    {textInfo?.blocks?.[4]?.link3}
                   </Link>
                   <ul>
                     <li>
@@ -260,55 +271,69 @@ const Home = () => {
         <section className="home-page__section6">
           <div className="container">
             <div className="home-page__section6-images">
-              <img src={fullSphereImg1} alt="" />
-              <img src={fullSphereImg2} alt="" />
-              <img src={fullSphereImg3} alt="" />
-              <img src={fullSphereImg4} alt="" />
+              <img
+                src={fullSphereImg1}
+                alt="Солнечные панели"
+                className="sphere-img img-1"
+              />
+              <img
+                src={fullSphereImg2}
+                alt="Электростанция"
+                className="sphere-img img-2"
+              />
+              <img
+                src={fullSphereImg3}
+                alt="Ветряки"
+                className="sphere-img img-3"
+              />
+              <img
+                src={fullSphereImg4}
+                alt="ЛЭП"
+                className="sphere-img img-4"
+              />
             </div>
             <div className="home-page__section6-content">
-              <h3 className="main-title">
-                {textInfo?.blocks?.[5]?.title}
-              </h3>
+              <h3 className="main-title">{textInfo?.blocks?.[5]?.title}</h3>
               <ul className="home-page__section6-list">
                 <li>
-                  <button className="home-page__section6-btn">
+                  <p className="home-page__section6-btn">
                     {textInfo?.blocks?.[5]?.featurs?.[0]?.children?.[0]?.text}
-                  </button>
-                </li>
-                <li> 
-                  <button className="home-page__section6-btn">
-                   {textInfo?.blocks?.[5]?.featurs?.[1]?.children?.[0]?.text}
-                  </button>
+                  </p>
                 </li>
                 <li>
-                  <button className="home-page__section6-btn">
-                   {textInfo?.blocks?.[5]?.featurs?.[2]?.children?.[0]?.text}
-                  </button>
+                  <p className="home-page__section6-btn">
+                    {textInfo?.blocks?.[5]?.featurs?.[1]?.children?.[0]?.text}
+                  </p>
                 </li>
                 <li>
-                  <button className="home-page__section6-btn">
+                  <p className="home-page__section6-btn">
+                    {textInfo?.blocks?.[5]?.featurs?.[2]?.children?.[0]?.text}
+                  </p>
+                </li>
+                <li>
+                  <p className="home-page__section6-btn">
                     {textInfo?.blocks?.[5]?.featurs?.[3]?.children?.[0]?.text}
-                  </button>
+                  </p>
                 </li>
                 <li>
-                  <button className="home-page__section6-btn">
-                   {textInfo?.blocks?.[5]?.featurs?.[4]?.children?.[0]?.text}
-                  </button>
+                  <p className="home-page__section6-btn">
+                    {textInfo?.blocks?.[5]?.featurs?.[4]?.children?.[0]?.text}
+                  </p>
                 </li>
                 <li>
-                  <button className="home-page__section6-btn">
+                  <p className="home-page__section6-btn">
                     {textInfo?.blocks?.[5]?.featurs?.[5]?.children?.[0]?.text}
-                  </button>
+                  </p>
                 </li>
                 <li>
-                  <button className="home-page__section6-btn">
-                   {textInfo?.blocks?.[5]?.featurs?.[6]?.children?.[0]?.text}
-                  </button>
+                  <p className="home-page__section6-btn">
+                    {textInfo?.blocks?.[5]?.featurs?.[6]?.children?.[0]?.text}
+                  </p>
                 </li>
                 <li>
-                  <button className="home-page__section6-btn">
-                   {textInfo?.blocks?.[5]?.featurs?.[7]?.children?.[0]?.text}
-                  </button>
+                  <p className="home-page__section6-btn">
+                    {textInfo?.blocks?.[5]?.featurs?.[7]?.children?.[0]?.text}
+                  </p>
                 </li>
               </ul>
             </div>
@@ -317,6 +342,6 @@ const Home = () => {
       </div>
     </>
   );
-}; 
+};
 
 export default Home;
