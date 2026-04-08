@@ -517,27 +517,16 @@
       h4 {
         font-family: var(--font-heading);
         font-size: var(--text-base);
-        font-weight: var(--font-semibold);
+        font-weight: var(--font-regular);
         color: var(--neutral-900);
         line-height: 1.4;
         margin: 0;
-
+        padding: 5px;
         @include media(1024) {
           font-size: var(--text-sm);
         }
       }
 
-      p {
-        font-size: var(--text-sm);
-        color: var(--neutral-600);
-        line-height: 1.5;
-        flex: 1;
-        margin: 0;
-
-        @include media(1024) {
-          font-size: var(--text-xs);
-        }
-      }
 
       a {
         display: inline-flex;
