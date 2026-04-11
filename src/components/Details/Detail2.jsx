@@ -12,15 +12,15 @@ const Detail2 = () => {
   const fullAddressImg = addressPath ? `${BASE_URL}${addressPath}` : null
   return (
     <>
-    <div className="corp-manage-page__details">
-          <div className="corp-manage-page__details-card">
+    <div className="corp-manage-page__details-end"> 
+          <div className="corp-manage-page__details-end-card">
             <img src={fullPhoneImg} alt="" />
             <p>
               {textInfo?.blocks?.[1]?.phone_text}
             </p>
             <a href="">{textInfo?.blocks?.[1]?.phone_number}</a>
           </div>
-          <div className="corp-manage-page__details-card">
+          <div className="corp-manage-page__details-end-card">
             <img src={fullAddressImg} alt="" />
             <p>
               {textInfo?.blocks?.[1]?.address_text}

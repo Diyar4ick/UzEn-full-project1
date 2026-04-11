@@ -68,7 +68,7 @@
   --text-5xl: 4.5rem;
   /* 72px */
   --text-6xl: 6rem;
-  /* 96px */
+  /* 96px */ 
 
   /* Font Weights - Refined Hierarchy */
   --font-light: 300;
@@ -221,7 +221,7 @@
   box-shadow: var(--shadow-refined);
 }
 
-.shadow-elevated {
+.shadow-elevated { 
   box-shadow: var(--shadow-elevated);
 }
 

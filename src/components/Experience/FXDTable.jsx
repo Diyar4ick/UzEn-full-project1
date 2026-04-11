@@ -16,13 +16,13 @@ const FXDTable = () => {
   }
 
   return ( 
-    <div className="FXD-table-page">
-      <div className="container">
+    <div className="corp-manage-page">
+      <div className="container"> 
         <div className="FXD-table-page__table">
           <h3 className="main-title">
             {textInfo?.blocks?.[0]?.title}
           </h3>
-          <table className="FXD-table-page__table">
+          <table className="corp-manage-page__table">
             <tbody>
               <tr>
                 <td colSpan={2} className="corp-manage-page__table-title">
@@ -46,7 +46,7 @@ const FXDTable = () => {
             </tbody>
           </table>
         </div>
-        <h3 className="main-title bold">
+        <h3 className="fxd-title bold">
           {textInfo?.blocks?.[1]?.title}
           <span className="enter"></span>
           {textInfo?.blocks?.[1]?.subtitle}
@@ -58,7 +58,7 @@ const FXDTable = () => {
               <span className="enter"></span>
             </p>
           ))}
-        <h3 className="main-title bold">
+        <h3 className="fxd-title bold">
            {textInfo?.blocks?.[2]?.title}
           <span className="enter"></span>
           {textInfo?.blocks?.[2]?.subtitle}
@@ -70,7 +70,7 @@ const FXDTable = () => {
               <span className="enter"></span>
             </p>
           ))}
-        <h3 className="main-title bold">
+        <h3 className="fxd-title bold">
            {textInfo?.blocks?.[3]?.title}
           <span className="enter"></span>
           {textInfo?.blocks?.[3]?.subtitle}
@@ -81,7 +81,7 @@ const FXDTable = () => {
               <span className="enter"></span>
             </p>
           ))}
-        <h3 className="main-title bold">
+        <h3 className="fxd-title bold">
            {textInfo?.blocks?.[4]?.title}
           <span className="enter"></span>
           {textInfo?.blocks?.[4]?.subtitle}

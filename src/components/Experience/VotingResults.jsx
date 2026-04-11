@@ -24,7 +24,7 @@ const VotingResults = () => {
         <Detail/> 
         <div className="corp-manage-page__content">
 
-          <h3 className="main-title"> 
+          <h3 className="fxd-title"> 
             {textInfo?.blocks?.[0]?.title}
           </h3>
           <table className="corp-manage-page__table">

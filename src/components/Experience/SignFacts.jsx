@@ -25,11 +25,11 @@ const SignFacts = () => {
             <img src={fullFactIImg} alt="" />
             <p>
               <span className="bold">{textInfo?.blocks?.[0]?.card2025?.[0]?.fact_year}</span>
-              <span className="enter"></span>
+              <span className="enter2"></span>
               {textInfo?.blocks?.[0]?.card2025?.[0]?.fact_text}
             </p>
             <a href="">{textInfo?.blocks?.[0]?.fact_link}</a>
-          </div>
+          </div> 
           <div className="sign-facts-page__card">
             <img src={fullFactIImg} alt="" />
             <p>

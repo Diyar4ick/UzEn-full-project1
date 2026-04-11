@@ -27,7 +27,7 @@ const Reports = () => {
         title: reportCard?.[0]?.title || reportCard?.title,
         subtitle: reportCard?.[0]?.sutitle || reportCard?.sutitle,
       } 
-    })
+    }) 
 
     if (status === 'loading' || !data) {
       return <div>Загрузка...</div>
@@ -48,12 +48,16 @@ const Reports = () => {
           {dataArray.map((reportCard, idx) => (
 
            <div key={idx} className="corp-manage-page__details-card">
+            <div className="">
+
             <img src={reportCard.img} alt="" />
             <p>
               <span className="bold">{reportCard.title}</span>
               <span className="enter"></span>
               {reportCard.subtitle}
             </p>
+
+            </div>
             <a href={`${reportLinks[idx]}`} download>{textInfo?.blocks?.[0]?.button}</a>
           </div>
           ))}
